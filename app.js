@@ -27,7 +27,7 @@ app.get("/", function (req, res) {
 });
 
 
-app.post("/", function (req, res) {
+app.post("/", (req, res) => {
     let item = req.body.newItem;
 
     if (req.body.list === "Work") {
@@ -42,7 +42,7 @@ app.post("/", function (req, res) {
     console.log(req.body);
 });
 
-app.get("/work", function (req, res) {
+app.get("/work", (req, res)=> {
     res.render("list", { listTitle: "Work List", newListItem: workItems });
 });
 
